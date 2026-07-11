@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-background": "#1b1c1a",
+                            "on-primary-container": "#96a9be",
+                            "on-tertiary-fixed": "#2d1604",
+                            "surface-variant": "#e3e2df",
+                            "on-secondary-fixed": "#360f00",
+                            "secondary-fixed-dim": "#ffb596",
+                            "on-tertiary": "#ffffff",
+                            "outline-variant": "#c4c6cd",
+                            "surface-container-lowest": "#ffffff",
+                            "inverse-on-surface": "#f2f1ed",
+                            "surface-dim": "#dbdad6",
+                            "surface": "#faf9f5",
+                            "on-surface": "#1b1c1a",
+                            "tertiary-container": "#533621",
+                            "on-surface-variant": "#43474c",
+                            "primary-fixed-dim": "#b5c8df",
+                            "secondary": "#944925",
+                            "on-secondary-container": "#773310",
+                            "primary": "#162839",
+                            "secondary-container": "#fe9e72",
+                            "on-primary-fixed-variant": "#36485b",
+                            "on-primary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "tertiary-fixed-dim": "#eabda0",
+                            "primary-fixed": "#d1e4fb",
+                            "on-tertiary-container": "#c99f83",
+                            "surface-container": "#efeeea",
+                            "error-container": "#ffdad6",
+                            "background": "#faf9f5",
+                            "primary-container": "#2c3e50",
+                            "on-primary-fixed": "#091d2e",
+                            "secondary-fixed": "#ffdbcd",
+                            "inverse-primary": "#b5c8df",
+                            "on-secondary-fixed-variant": "#76320f",
+                            "surface-container-highest": "#e3e2df",
+                            "surface-container-low": "#f4f4f0",
+                            "surface-bright": "#faf9f5",
+                            "on-secondary": "#ffffff",
+                            "inverse-surface": "#2f312e",
+                            "tertiary-fixed": "#ffdcc6",
+                            "tertiary": "#3a210d",
+                            "error": "#ba1a1a",
+                            "on-tertiary-fixed-variant": "#5f402a",
+                            "on-error": "#ffffff",
+                            "outline": "#74777d",
+                            "surface-tint": "#4e6073",
+                            "surface-container-high": "#e9e8e4"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "gutter": "24px",
+                            "margin-mobile": "20px",
+                            "margin-desktop": "64px",
+                            "unit": "8px",
+                            "container-max": "1280px"
+                        },
+                        "fontFamily": {
+                            "body-lg": ["Hanken Grotesk"],
+                            "label-md": ["Hanken Grotesk"],
+                            "body-md": ["Hanken Grotesk"],
+                            "headline-sm": ["Libre Caslon Text"],
+                            "label-sm": ["Hanken Grotesk"],
+                            "headline-md": ["Libre Caslon Text"],
+                            "display-lg": ["Libre Caslon Text"],
+                            "display-lg-mobile": ["Libre Caslon Text"]
+                        },
+                        "fontSize": {
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                            "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+<style>
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(22, 40, 57, 0.4), rgba(22, 40, 57, 0.2));
+        }
+        .bottom-scrim {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+        .text-shadow-premium {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .stitch-divider {
+            height: 1px;
+            background-image: linear-gradient(to right, transparent 50%, #c4c6cd 50%);
+            background-size: 8px 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes gentle-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        .animate-gentle-bounce {
+            animation: gentle-bounce 2s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-gentle-bounce {
+                animation: none;
+            }
+            .animate-fade-in-up {
+                animation-duration: 0.1ms;
+                animation-iteration-count: 1;
+                transition-duration: 0.1ms;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary/30 overflow-y-auto min-h-screen">
+<!-- TopNavBar: Fixed and stable -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">SAPATERO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/collections.html">Collections</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/our story.html">Our Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/craftsmanship.html">Craftsmanship</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/bespoke.html">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Container with Animation -->
+<main class="animate-fade-in-up">
+<!-- Cinematic Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-primary/30 z-10 hero-gradient"></div>
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, wide-angle shot of a master craftsman in a sun-drenched Manila workshop, meticulously hand-stitching a deep mahogany leather oxford shoe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDH-85DuXBwjkO6tWT1QOa1wK_wrpkEavU92Bfd3R9wnV29DqYXWSOU2_ld6Zjqkvwo-KainZNrEJ6xOCV-IE192xyAhJNTpo0iFMNUi4wI81n3Z5C2u05ORat33_x8S8tpHiINAK58uwQJF3aja-aaJnDB7HRaugZbhMxE6VRfa4D355xz1bAnScpnwRY4DhdHhBgW-MktkOy-RoCG9r8ek4LyZRQSiT8J6gaHHoNycUmdQoQ8p9gU');"></div>
+<div class="relative z-20 text-center max-w-4xl px-margin-mobile">
+<span class="font-label-md text-label-md text-surface uppercase tracking-[0.3em] mb-6 block text-shadow-premium">Est. 2014 Manila</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-surface mb-8 leading-tight text-shadow-premium">
+                The Soul of Italian Design,<br/>The Heart of Filipino Hands.
+            </h1>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-surface px-10 py-4 font-label-md text-label-md hover:bg-secondary transition-colors shadow-lg">
+                    EXPLORE THE COLLECTION
+                </button>
+<button class="border border-surface text-surface px-10 py-4 font-label-md text-label-md hover:bg-surface/10 transition-colors backdrop-blur-sm shadow-lg">
+                    THE BESPOKE JOURNEY
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-surface flex flex-col items-center gap-2 animate-gentle-bounce">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-shadow-premium">Scroll</span>
+<span class="material-symbols-outlined text-shadow-premium">expand_more</span>
+</div>
+</section>
+<!-- New Arrivals: Bento Grid Layout -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-gutter">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">New Arrivals</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Exploring the boundary between traditional silhouettes and contemporary details. Our latest drop features the signature Sienna patina.</p>
+</div>
+<a class="artisanal-cta font-label-md text-label-md text-secondary" href="#">
+                VIEW ALL PIECES <span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-[800px]">
+<!-- Featured Item -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-low p-8 flex flex-col justify-end">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up detailed shot of a pair of Sapatero wholecut oxford shoes in a vibrant Sienna hand-painted patina." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9rizGlm-ctsqkn5MAhuT3hJe4tBxQcJ19DUIksHJ-gEJUddtOPVuMMc5jRLufiOg0iuX9LjV922VZtK-iJQM1P3cQ6s7EYZwCSHSe5TxlQ3CA0NbjXTj38GSb-XRpFdV46jnx3IdEK09X_cMsw22J7gqgcgqAU4ZVMagkyttVCFQ2t35UE0YdWrtpKY3_ThbMNqecHfREZkThCdfa2d_b1kNW2iByy8S_FjQIzWZEAeUx3PXP1OqG');"></div>
+<div class="relative z-10 bg-surface/90 backdrop-blur-md p-8 max-w-xs border-l-4 border-secondary transition-all duration-500 shadow-xl">
+<p class="font-label-sm text-label-sm text-secondary mb-2 uppercase">The Signature</p>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Wholecut Oxford in Sienna</h3>
+<p class="font-body-md text-body-md mb-6 text-on-surface">Meticulously cut from a single piece of flawless box calf leather.</p>
+<button class="bg-primary text-surface px-6 py-3 font-label-md text-label-md hover:bg-secondary transition-colors">SHOP NOW</button>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-8">
+<!-- Secondary Item 1: Navy Tassel Loafer -->
+<div class="group relative overflow-hidden bg-surface-container-low flex flex-col justify-between p-6">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-fidelity product photograph of a premium, handcrafted leather Loafer from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLtDtODT9FleXrt9b-8gkWhJXs7OqVnjOTS5GnbZFx6SRFnKCWwGT1cD4wOrfIwM_zbT9sU8GZq8Kzf8pZZG9gYJgnIiIO6TBS2es5zMePNSbZc0hPM1gyh6TwWSEKRlNCmEO1hopaXP1YFbg0-lAorBBX1-dvY8a0EEdDNtKv88t0jdfWvr5tAmHuR9I768JGPrLLoZXMXDmJu5HkO2JxHFjeweRKMldSu-P5kaWNZJEy0bWYgod18mjoQ');"></div>
+<div class="absolute inset-0 bottom-scrim opacity-70"></div>
+<div class="relative z-10 text-right">
+<span class="inline-block px-3 py-1 bg-secondary text-surface font-label-sm text-label-sm shadow-md">NEW</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline-sm text-headline-sm text-surface text-shadow-premium">Navy Tassel Loafer</h4>
+<p class="font-label-md text-label-md text-surface/90 text-shadow-premium">₱21,000</p>
+</div>
+</div>
+<!-- Secondary Item 2: Chelsea Boot -->
+<div class="group relative overflow-hidden bg-surface-container-low flex flex-col justify-between p-6 border border-surface-variant">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-fidelity product photograph of a premium, handcrafted leather Chelsea Boot from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvOoBbcSVfHVzsl9hK5Mb4ig44w_CPNRhABhTAC0jgaqARZFdBJHrUWvz1E0MO7cWmWNphEMMiZiDg55ANz9T2J_OVSG1dS29-RAEbMrk3S0eckTE3es_Ch2OMudkZw96velWPai_dzyvD66-UGix7Yxk77dw-7jcbsdmrZF1jEmkhJ1DoGcg_bBAiNpjF6svdL8WigzxrrDRtKwBo7X7NaB38DZ9I0dP431gWsNn4TWEe8i0AruxCFiw');"></div>
+<div class="absolute inset-0 bottom-scrim opacity-70"></div>
+<div class="relative z-10 mt-auto">
+<h4 class="font-headline-sm text-headline-sm text-surface text-shadow-premium">Chelsea Boot</h4>
+<p class="font-label-md text-label-md text-surface/90 text-shadow-premium">₱23,000</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Stitch Divider -->
+<div class="px-margin-desktop max-w-container-max mx-auto py-12">
+<div class="stitch-divider"></div>
+</div>
+<!-- The Art of Shoemaking: Editorial Section -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-24">
+<div class="relative">
+<div class="aspect-[4/5] relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A series of macro shots showing the shoemaking process." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOZu1paKWTYoOMRuQxpsHmJuL63RH4n6Md-FsWrdfprfb28Z6uKzQaAarOjFFChFDX3IJF3pt2bGGMrZ-TzYDsobdcITuy-G30blz7DQzimlRfhSP8zsa-lNf6GR4O1A2l-ANcGjhFF3d_Wt9GvdEGu3oiaam9COepue15exR1q-2OBiBYyDFlkwXsShzQUgpTCjhGha7TnAWV9rooUwOOwZuIwjKfTkdejPBnfiREciWnOyiBY63z');"></div>
+</div>
+<!-- Tactile Overlay Card -->
+<div class="absolute -right-12 -bottom-12 bg-surface p-10 max-w-sm hidden lg:block shadow-2xl border border-surface-variant">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">architecture</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">300 Steps to Perfection</h3>
+<p class="font-body-md text-body-md text-on-surface mb-6 leading-relaxed">Each pair undergoes a rigorous 4-week journey from leather selection to the final hand-buffing of the patina.</p>
+<a class="artisanal-cta text-secondary font-label-md text-label-md font-bold" href="#">READ THE PROCESS</a>
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary leading-tight">Hand-Welted in Marikina, Rooted in Italian Sophistication.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Sapatero is a tribute to the legendary shoemaking district of Marikina, Philippines. We marry the technical prowess of local masters with the timeless silhouettes of European sartorial tradition. 
+                </p>
+<div class="grid grid-cols-2 gap-8 py-8 border-y border-surface-variant">
+<div>
+<p class="font-label-md text-label-md text-secondary mb-2 font-bold uppercase tracking-wider">FULL GRAIN</p>
+<p class="font-body-md text-body-md text-on-surface">Sourced from the finest tanneries in Tuscany.</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary mb-2 font-bold uppercase tracking-wider">HAND-WELTED</p>
+<p class="font-body-md text-body-md text-on-surface">Traditional construction for longevity and comfort.</p>
+</div>
+</div>
+<button class="bg-primary text-surface px-10 py-4 self-start font-label-md text-label-md hover:bg-secondary transition-all shadow-md">OUR CRAFTSMANSHIP STORY</button>
+</div>
+</div>
+</section>
+<!-- Curated Bestsellers: Minimal Product Carousel -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">The Essentials</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Curated silhouettes that define the Sapatero aesthetic. Timeless, versatile, and built to last a lifetime.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1: Double Monk Strap -->
+<div class="group">
+<div class="aspect-[1/1] mb-6 overflow-hidden relative bg-surface-container-low">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional product photograph of a handcrafted leather Double Monk Strap shoe from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvBOJWAv5v58gGAhEEve-WRbSr3cEEC_t3X2k7fM6jqeb4pg07i2vNY5bYGWQXMlywAmOF5bDVgkvNyfKupjpSMa45h1-qR-AffTGBd5cCz78Ytyxc3hYYyoc7tLqp6EqN5R0FfNtjkd1viGWx1virMHv8IvBSgTB7biy5Xkryo-N6fUaC_HfWueEsvKEsKdM_38BCN2CMMOcXnMNeCX42il0hxzVWtLmyhqic43gqkOzFosRTAvJQCGwI');"></div>
+<div class="absolute bottom-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="text-center">
+<h4 class="font-body-lg text-body-lg text-primary mb-1">Double Monk Strap</h4>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Dark Chocolate Calf</p>
+<p class="font-body-md text-body-md text-secondary font-bold">₱19,500</p>
+</div>
+</div>
+<!-- Product Card 2: Summer Loafer -->
+<div class="group">
+<div class="aspect-[1/1] mb-6 overflow-hidden relative bg-surface-container-low">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional product photograph of a handcrafted leather Derby shoe from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsK8tHNkerRVtz1TSTSsQRYfjQAsN7U7eV-YYTf8tc2lHrWcWBUE0fPN7G6Rfhxyp-6dJFX7XTlsMLYMPNnCNzH8QaOh5vOWgO0eemD2DNJpVkromh2h6QymAxMCJDaDxHzdToprv46hzCNpHQaNrKov4qcdu5tNP1yuXNxgmVvPY3kqdvt0MRMGYIWtSrtB5xntLFb34-cVYc2LBE0aAWkRogZ1GQVtsLowPDyHYCHAJ0fhi1-8ciNzg');"></div>
+<div class="absolute bottom-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="text-center">
+<h4 class="font-body-lg text-body-lg text-primary mb-1">Summer Loafer</h4>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Sand Suede</p>
+<p class="font-body-md text-body-md text-secondary font-bold">₱15,900</p>
+</div>
+</div>
+<!-- Product Card 3: Cap-Toe Oxford -->
+<div class="group">
+<div class="aspect-[1/1] mb-6 overflow-hidden relative bg-surface-container-low">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional product photograph of a handcrafted leather Oxford shoe from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvvoo1hu_zBa7IbofH82iOdK1t734wW4ZKQ0hes0cmmntw5JgJof_cE3GARbilnBA5cNK1qgSYwuGmkRLZRj0uFlY13k4SSuU8ta0A6LkFx8GWWyYx5uwvBgoSpF6HzO4YCYPs_r99Uk1L_rUSmmqlIaLWu1F3QCg5R_jW8uUbu3zTbeGJ6v0bqA3oMRHp16oMqB-dS567kBBpMqSQz0sFbM-b_gDmlpcIoK6rVAS5zw5I5_ikmAiJ4NeM');"></div>
+<div class="absolute bottom-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="text-center">
+<h4 class="font-body-lg text-body-lg text-primary mb-1">Cap-Toe Oxford</h4>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Midnight Black</p>
+<p class="font-body-md text-body-md text-secondary font-bold">₱18,500</p>
+</div>
+</div>
+<!-- Product Card 4: Full Brogue Wingtip -->
+<div class="group">
+<div class="aspect-[1/1] mb-6 overflow-hidden relative bg-surface-container-low">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional product photograph of a handcrafted leather Wingtip Brogue shoe from Sapatero." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLveb5jhvgYfoFTqAPTyFcQj752BiMSD2VvkxAjG3lk8Anmrr-xM7GDLcmuRs3gDNbDpKo3GfWZWFvRLvOrKgQRxT_gHobxutvpCiKHjUhN2B9H4CqIEXG4uqbvMCwJOl4WRvV3-lXhhrN9BYOdKPsburRnRxrVJNFsj7llkl1PBRPB4xOSnD1CxWgk5mvW5YQwTqkPW0AhdERWsxdGMRZNZGVniYYWu272DMVnemKMNpEixCEiaO9NZPHo');"></div>
+<div class="absolute bottom-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-secondary hover:text-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+</div>
+<div class="text-center">
+<h4 class="font-body-lg text-body-lg text-primary mb-1">Full Brogue Wingtip</h4>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Cognac Heritage</p>
+<p class="font-body-md text-body-md text-secondary font-bold">₱21,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Subscription -->
+<section class="py-24 bg-primary text-surface">
+<div class="px-margin-desktop max-w-2xl mx-auto text-center">
+<span class="material-symbols-outlined text-4xl mb-6 text-secondary">mail</span>
+<h2 class="font-headline-md text-headline-md mb-4 text-shadow-premium">The Atelier Dispatch</h2>
+<p class="font-body-lg text-body-lg mb-10 opacity-90 text-shadow-premium">Join our inner circle for early access to new collections, care guides, and the stories behind the stitch.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-grow bg-transparent border-b border-surface/50 px-4 py-3 focus:border-secondary outline-none font-body-md placeholder:text-surface/60 transition-colors" placeholder="Your email address" type="email"/>
+<button class="bg-secondary text-surface px-8 py-3 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-md">SUBSCRIBE</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-high dark:bg-on-background border-t border-surface-variant dark:border-on-surface-variant">
+<div class="max-w-sm">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed mb-6 uppercase tracking-widest">SAPATERO</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                Celebrating the intersection of Filipino spirit and global craftsmanship. Each pair of Sapatero shoes is a testament to the enduring beauty of handcrafted goods.
+            </p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">chat</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-x-24 gap-y-12">
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Explore</h5>
+<ul class="flex flex-col gap-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Collections</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">The Bespoke Lab</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Our Story</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Craftsmanship</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Service</h5>
+<ul class="flex flex-col gap-4 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Sustainability</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Contact Us</a></li>
+<li><a class="hover:text-secondary transition-colors uppercase tracking-widest text-label-sm" href="#">Care Guide</a></li>
+</ul>
+</div>
+</div>
+<div class="w-full md:w-auto mt-12 md:mt-0 pt-8 md:pt-0 border-t border-surface-variant md:border-none">
+<p class="font-label-md text-label-md text-on-surface-variant/60">
+                © 2024 Sapatero Manila. Handcrafted Excellence.
+            </p>
+</div>
+</footer>
+</main>
+<script>
+    // Micro-interactions and scroll effects
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('py-2', 'shadow-sm');
+        } else {
+            nav.classList.remove('py-2', 'shadow-sm');
+        }
+    });
+</script>
+</body></html>

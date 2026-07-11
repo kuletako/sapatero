@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth overflow-y-auto" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Measurement Guide | SAPATERO Manila</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .artisanal-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .artisanal-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #944925;
+            transition: width 0.4s ease;
+        }
+        .artisanal-underline:hover::after {
+            width: 100%;
+        }
+        .stitch-divider {
+            background-image: repeating-linear-gradient(90deg, #c4c6cd 0, #c4c6cd 4px, transparent 4px, transparent 8px);
+            height: 1px;
+            width: 100%;
+        }
+        .measure-card:hover {
+            border-color: #944925;
+            transform: translateY(-4px);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* New Entrance Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    </style>
+<!-- Tailwind Config Execution -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9f5",
+                    "tertiary-fixed-dim": "#eabda0",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#36485b",
+                    "on-background": "#1b1c1a",
+                    "on-primary-fixed": "#091d2e",
+                    "surface-container-highest": "#e3e2df",
+                    "surface-variant": "#e3e2df",
+                    "secondary": "#944925",
+                    "on-tertiary-fixed-variant": "#5f402a",
+                    "tertiary-container": "#533621",
+                    "on-secondary-fixed": "#360f00",
+                    "primary-container": "#2c3e50",
+                    "background": "#faf9f5",
+                    "surface-container-high": "#e9e8e4",
+                    "primary-fixed": "#d1e4fb",
+                    "on-secondary-fixed-variant": "#76320f",
+                    "surface-container-low": "#f4f4f0",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdbcd",
+                    "on-tertiary-fixed": "#2d1604",
+                    "on-surface": "#1b1c1a",
+                    "outline-variant": "#c4c6cd",
+                    "on-surface-variant": "#43474c",
+                    "primary": "#162839",
+                    "inverse-primary": "#b5c8df",
+                    "surface": "#faf9f5",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#ffb596",
+                    "primary-fixed-dim": "#b5c8df",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2f312e",
+                    "tertiary-fixed": "#ffdcc6",
+                    "surface-container": "#efeeea",
+                    "on-secondary-container": "#773310",
+                    "on-primary-container": "#96a9be",
+                    "on-tertiary-container": "#c99f83",
+                    "inverse-on-surface": "#f2f1ed",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#4e6073",
+                    "tertiary": "#3a210d",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fe9e72",
+                    "outline": "#74777d",
+                    "surface-dim": "#dbdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Libre Caslon Text"],
+                    "label-md": ["Hanken Grotesk"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-md": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-fixed selection:text-on-secondary-fixed overflow-y-auto h-auto opacity-100 min-h-screen">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">SAPATERO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/collections.html">Collections</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/our story.html">Our Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/craftsmanship.html">Craftsmanship</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary transition-colors duration-300" href="/sapatero/bespoke.html">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<div class="animate-fade-in-up">
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-6 transition-all duration-700 opacity-100 translate-y-0">
+<span class="font-label-md text-label-md text-secondary tracking-widest uppercase mb-4 block">Crafting the Perfect Fit</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">Your Digital Measure Guide</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    Every pair of Sapatero shoes begins with a precise understanding of the wearer. Follow our artisanal measurement protocol to provide the blueprints for your handcrafted legacy.
+                </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 group">
+                        BEGIN MEASURING
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="px-8 py-4 border border-secondary text-secondary font-label-md text-label-md hover:bg-secondary/5 transition-all">
+                        WATCH VIDEO
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-6 relative aspect-square transition-all duration-700 opacity-100 translate-y-0">
+<div class="absolute inset-0 bg-surface-container-high rounded-full opacity-50 scale-90 translate-x-10 translate-y-10 blur-3xl"></div>
+<img class="w-full h-full object-cover relative z-10 rounded-lg shadow-sm" data-alt="A cinematic, high-key photograph of a pair of handcrafted leather dress shoes resting on a mahogany workbench with measuring tools, measuring tape, and a sketchpad nearby. The lighting is soft and warm, emphasizing the rich brown tones of the full-grain leather. The atmosphere is quiet, luxurious, and focused on artisanal detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvhCehxZ34wlY27RIbr8bGUgPY9uEKdL8J0Z0RB-O6AIao3K3C8Lw5WrcADbuWvHQX465RcKUP4rJoE6NGf6add5nMVwIKYSscldh2JEh0ZZUUBVS7jww2s2G13Jd4Duxouu7RWlHc35nuYCRSYnQ4b2KYhAiMTjsdG21CxAJEcvRXpntjkwzNErtraQwOVZ43L5B6Sbfaaw1ilqf4EHoQKyC9iq9YWl9LDxc5hBd_hvvsr8sCpzUy"/>
+</div>
+</section>
+<!-- The Kit You'll Need -->
+<section class="bg-surface-container-low py-24 mb-24">
+<div class="max-w-container-max mx-auto px-margin-desktop transition-all duration-700 opacity-100 translate-y-0">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<h2 class="font-headline-md text-headline-md text-primary">The Kit You'll Need</h2>
+<div class="w-24 h-px bg-outline-variant mb-4 hidden md:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Item 1 -->
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant/30 hover:border-secondary transition-all group">
+<div class="w-20 h-20 flex items-center justify-center bg-surface-bright rounded-full mb-6 group-hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="description">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Large Paper</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Two sheets of A4 or larger, ensuring your entire foot fits comfortably on the surface.</p>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant/30 hover:border-secondary transition-all group">
+<div class="w-20 h-20 flex items-center justify-center bg-surface-bright rounded-full mb-6 group-hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="straighten">straighten</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Soft Tape &amp; Ruler</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A flexible measuring tape for circumference and a rigid ruler for length and width.</p>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant/30 hover:border-secondary transition-all group">
+<div class="w-20 h-20 flex items-center justify-center bg-surface-bright rounded-full mb-6 group-hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="edit">edit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Fine-Tip Pencil</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Used for precise tracing. Keep the pencil strictly vertical at all times during the trace.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Measurement Steps (The Process) -->
+<section class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-24 transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">A Four-Step Protocol</h2>
+<div class="stitch-divider mx-auto w-32 mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Precision is the soul of bespoke footwear. Please follow these steps carefully, ideally wearing the socks you intend to wear with your shoes.</p>
+</div>
+<!-- Step 1 -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32 transition-all duration-700 opacity-100 translate-y-0">
+<div class="order-2 lg:order-1">
+<span class="font-label-md text-label-md text-secondary font-bold mb-4 block">01 / ARCHIVE THE SILHOUETTE</span>
+<h3 class="font-display-lg text-display-lg text-primary mb-6">Trace Your Foot</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Place your foot firmly on the paper. Keeping your weight distributed evenly, trace the entire outline of your foot. Hold the pencil perpendicular to the paper—do not tilt it inward or outward, as this will skew the measurements.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="check_circle">check_circle</span>
+                            Stand on a hard floor, not carpet.
+                        </li>
+<li class="flex items-start gap-3 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="check_circle">check_circle</span>
+                            A second person tracing for you is highly recommended.
+                        </li>
+</ul>
+</div>
+<div class="order-1 lg:order-2 border border-surface-variant p-2">
+<img class="w-full h-auto" data-alt="A top-down, minimalist technical diagram showing a foot being traced onto a white piece of paper. The style is clean and editorial, using thin lines and a warm cream background. A wooden pencil is held vertically against the side of the heel, illustrating the proper technique for an accurate silhouette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtW6DdITWhXk44q-F_vg2rrcHXaQ_JBp25MFhN9tIgmurKjA1SS4KcMb4ngqDlDbiz98RRnDW6NUhOz447PaKbIyfm4F7648RpKzdI9dLjwaafY6WnOF0MyvI5gR-34mhz9TYsI_16RdRRyVaVdn3nWl3T0AadTMlexPld_izqWvx-204tELYEGS7MKAj725s4xu7QmCG3rbBOHovyuzOad_j0OrnL2mniksIdTgqSQBhZX0FaFJhT"/>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32 transition-all duration-700 opacity-100 translate-y-0">
+<div class="border border-surface-variant p-2">
+<img class="w-full h-auto" data-alt="An elegant diagram showing a traced foot with a vertical line drawn from the tip of the longest toe to the center of the heel. The aesthetic is heritage-modern, with subtle annotations in a serif font. The colors are muted navy and cream, echoing a high-end luxury atelier's drafting table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkcIh9dGS_p-YIibGHgm42Px1Bm6dfuhS6D1Otv4agJiLoXMj9PHNYjWNu00fzH-0bS2LOTfCQrg8XLlrQ29I5cKe5msypaZil6-64hhfKmbxAdfuNnK2Oq0Rbs0s-4KsbDyQLe7rH179EQRObgcBD8_eERe-Ss2TSnDQ2tlBvc_t1StSe_sKOco5LJEpvOfAVqDQUJ4JFh1nwhgrC5r6FwUD3fP782OjwYpHZxrIN2AFIqPxMl2C1"/>
+</div>
+<div>
+<span class="font-label-md text-label-md text-secondary font-bold mb-4 block">02 / VERTICAL AXIS</span>
+<h3 class="font-display-lg text-display-lg text-primary mb-6">Measure Length</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Using your ruler, measure the distance from the very back of the heel to the tip of your longest toe. This measurement defines the primary last size. Measure in millimeters for the highest level of accuracy.
+                    </p>
+<div class="p-6 bg-tertiary-fixed text-on-tertiary-fixed border-l-4 border-secondary">
+<p class="font-label-md text-label-md font-bold italic">Pro Tip: Your left and right feet are rarely identical. Always measure both and provide the larger value.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 & 4 Grid (Asymmetric) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-700 opacity-100 translate-y-0">
+<div class="bg-surface-container p-12 measure-card transition-all duration-500">
+<span class="font-label-md text-label-md text-secondary font-bold mb-4 block">03 / WIDTH &amp; VOLUME</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Measure Width</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Identify the widest points of your foot (the ball). Measure across the flat tracing, then use the soft tape to measure the circumference around the same points.</p>
+<img class="w-full h-64 object-cover mb-6" data-alt="A close-up diagram illustrating the measurement of foot width at the ball. A soft measuring tape is shown wrapped around the metatarsal area of a foot. The lighting is soft studio style, highlighting the texture of the tape and the precision of the measurement process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXcgXXDLGoQXrRwebYRY3x-HdoMZACd5_HiNeecP_LzUPRratWgdENLTlaYi2ayUXg4DJuMkSARFWRAdxT8t3XuiMnMwajOREIfHK9mHNt4etAb_6DTw8fCcQT0rTgNjv4C4CHJaXujnKE6C5qYqHa_P9YemLhgBVK6QlKonP3Fc4K5Hjz8zrg8rvoge0Z72GhakQemqENlmL63ELPUe7uUWt0tt3I8YzWOH1ycWhKgxT3VJER2lD1"/>
+</div>
+<div class="bg-surface-container p-12 measure-card transition-all duration-500">
+<span class="font-label-md text-label-md text-secondary font-bold mb-4 block">04 / THE ARCH PROFILE</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Arch Height</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Wet your foot and step onto a piece of dry paper. The shape of the imprint reveals your arch height—essential for proper internal support and lasting comfort.</p>
+<img class="w-full h-64 object-cover mb-6" data-alt="A sophisticated visual representation of three different foot arch types: flat, normal, and high. The imprints are shown as artistic, watercolor-style silhouettes on a textured paper background, blending medical precision with artisanal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdbRpHo4ZbP-F4SMl5b-fkHlRSw4g16-PSWL9D_FYApKbup5gJLVpfKsTPfGcFfifNn10L0lRp_YU-7_2BmxB5zXjRZbC7RDAVIgM4kZZiq47kSkFvG-u_3ATSk9F1UT4y4-Egrxv-DbLe6ltrpG83bzt9gEuXMUvoiRbW0t9cVYw_X8zVZSjh5CqFZkODBvDXmagVC7-DFJxBkzDibIkW9UqznTy-XLuRCsRDicq0jfJIvtJcFU7M"/>
+</div>
+</div>
+</section>
+<!-- Final CTA / Commitment -->
+<section class="mt-32 py-24 bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center transition-all duration-700 opacity-100 translate-y-0">
+<h2 class="font-display-lg text-display-lg mb-8">Ready to Submit?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl mx-auto mb-12">Once you have your figures, upload them to our Bespoke Portal. Our master cordwainers will review your data before starting the last-making process.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<a class="px-10 py-5 bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary/90 transition-all flex items-center justify-center gap-2" href="{{DATA:SCREEN:SCREEN_5}}">
+                        UPLOAD MEASUREMENTS
+                        <span class="material-symbols-outlined" data-icon="cloud_upload">cloud_upload</span>
+</a>
+<a class="px-10 py-5 border border-on-primary text-on-primary font-label-md text-label-md hover:bg-white/10 transition-all flex items-center justify-center gap-2" href="/sapatero/book.html">
+                        REQUEST A ZOOM CONSULT
+                        <span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</a>
+<a class="px-10 py-5 border border-on-primary text-on-primary font-label-md text-label-md hover:bg-white/10 transition-all flex items-center justify-center gap-2" href="/sapatero/book.html">
+                        BOOK AN APPOINTMENT
+                        <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</a></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-16 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-surface-container-high dark:bg-on-background border-t border-surface-variant dark:border-on-surface-variant">
+<div class="md:w-1/3">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed mb-4 uppercase tracking-widest">SAPATERO</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mb-8">Preserving the legacy of Filipino cordwainery through modern design and traditional soul.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined p-2 border border-outline-variant hover:border-secondary transition-colors cursor-pointer" data-icon="photo_camera">photo_camera</span>
+<span class="material-symbols-outlined p-2 border border-outline-variant hover:border-secondary transition-colors cursor-pointer" data-icon="mail">mail</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-16">
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary font-bold mb-2 uppercase tracking-widest">SERVICES</span>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Bespoke Fitting</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Resole Program</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Care Guide</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Gift Cards</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-primary font-bold mb-2 uppercase tracking-widest">COMPANY</span>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Sustainability</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Shipping &amp; Returns</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Contact Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors uppercase tracking-widest" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="w-full md:w-auto mt-12 md:mt-0 pt-12 md:pt-0 border-t md:border-0 border-outline-variant flex flex-col items-end">
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">© 2024 Sapatero Manila. Handcrafted Excellence.</p>
+<p class="font-label-sm text-label-sm text-outline">Manila | Marikina | Florence</p>
+</div>
+</footer>
+</div>
+<script>
+        // Micro-interactions for smooth scroll and hover states
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

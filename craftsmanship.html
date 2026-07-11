@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    try {
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dbdad6",
+                        "on-background": "#1b1c1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fe9e72",
+                        "on-surface": "#1b1c1a",
+                        "primary-fixed-dim": "#b5c8df",
+                        "surface": "#faf9f5",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-primary": "#b5c8df",
+                        "secondary": "#944925",
+                        "primary-fixed": "#d1e4fb",
+                        "on-secondary-fixed-variant": "#76320f",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#faf9f5",
+                        "tertiary-container": "#533621",
+                        "on-primary-fixed": "#091d2e",
+                        "outline-variant": "#c4c6cd",
+                        "surface-container-low": "#f4f4f0",
+                        "on-surface-variant": "#43474c",
+                        "on-primary-fixed-variant": "#36485b",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4e6073",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#360f00",
+                        "secondary-fixed-dim": "#ffb596",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#c99f83",
+                        "outline": "#74777d",
+                        "primary-container": "#2c3e50",
+                        "background": "#faf9f5",
+                        "tertiary-fixed-dim": "#eabda0",
+                        "primary": "#162839",
+                        "secondary-fixed": "#ffdbcd",
+                        "on-secondary-container": "#773310",
+                        "tertiary": "#3a210d",
+                        "surface-container-highest": "#e3e2df",
+                        "surface-container": "#efeeea",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e3e2df",
+                        "on-tertiary-fixed": "#2d1604",
+                        "on-tertiary-fixed-variant": "#5f402a",
+                        "on-primary-container": "#96a9be",
+                        "surface-container-high": "#e9e8e4",
+                        "inverse-on-surface": "#f2f1ed",
+                        "inverse-surface": "#2f312e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Libre Caslon Text"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    } catch (_e) {}
+    </script>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container overflow-y-auto min-h-screen">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight" href="/sapatero/index.html">SAPATERO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/collections.html">Collections</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/out story.html">Our Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary transition-colors duration-300" href="/sapatero/craftsmanship.html">Craftsmanship</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/bespoke.html">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- Main content container with entrance animation -->
+<main class="animate-fade-in-up">
+<!-- Technical Numbers Grid -->
+<section class="py-margin-desktop px-margin-desktop max-w-container-max mx-auto mt-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="p-8 border border-outline-variant/30 group hover:border-secondary transition-colors duration-500">
+<span class="font-display-lg text-display-lg text-primary block mb-2 font-bold">300+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface text-primary">Critical Steps</span>
+</div>
+<div class="p-8 border border-outline-variant/30 group hover:border-secondary transition-colors duration-500">
+<span class="font-display-lg text-display-lg text-primary block mb-2 font-bold">45</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface text-primary">Hours per pair</span>
+</div>
+<div class="p-8 border border-outline-variant/30 group hover:border-secondary transition-colors duration-500">
+<span class="font-display-lg text-display-lg text-primary block mb-2 font-bold">12</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface text-primary">Stitches per inch</span>
+</div>
+<div class="p-8 border border-outline-variant/30 group hover:border-secondary transition-colors duration-500">
+<span class="font-display-lg text-display-lg text-primary block mb-2 font-bold">15</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface text-primary">Years of Longevity</span>
+</div>
+</div>
+</section>
+<!-- Process Breakdown -->
+<section class="py-margin-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-24 flex flex-col md:flex-row items-end justify-between gap-gutter">
+<div class="max-w-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Precision in Every Component</h2>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed tracking-normal">We believe that a shoe is only as good as the sum of its parts. Each stage of our construction is handled by a specialist master artisan in our Marikina atelier.</p>
+</div>
+<span class="font-display-lg text-display-lg select-none hidden md:block text-outline-variant/50">Process</span>
+</div>
+<div class="space-y-24">
+<!-- Step 1: Leather Selection -->
+<div class="scroll-reveal grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block font-semibold">Stage 01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-4">Leather Selection</h3>
+<p class="font-body-md text-body-md mb-8 text-on-surface leading-relaxed tracking-normal">Only the top 5% of full-grain calfskin makes it to our cutting table. We source from world-renowned tanneries that prioritize sustainable, vegetable-tanning processes, ensuring a hide that develops a unique character over time.</p>
+<ul class="space-y-4 font-label-md text-label-md text-primary">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                                Grade-A European hides
+                            </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">eco</span>
+                                Sustainable Tanning
+                            </li>
+</ul>
+</div>
+<div class="md:col-start-7 relative md:col-span-7">
+<div class="aspect-[4/5] bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-700" data-alt="A macro photograph showcasing the intricate grain of deep mahogany full-grain leather. Soft, directional workshop lighting highlights the natural textures and slight imperfections that signify authenticity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC77YZdtdSDQT1niQVj8eD32vNd-yAc2YiBboyJHVUgH2ZMGLT_luF67mGhXaj5Ay50A9xL-eU0Gf0K07r8fnxkwHsJuoLZ_4bcAuH50VgIpErGyyEQPIYjUDISPc_1CVyrVifVQIPq8Oo4WIGg1E3Aw-2s7juvGxdJHE9PePu2T20W96PTnKcFNuvRO0BMS7v0tRJLvFG87xplPUrIPKgRkRZ-FwBOIVD_mpNYJlVMnbKuLzQCQne0"/>
+</div>
+</div>
+</div>
+<!-- Step 2: The Last -->
+<div class="scroll-reveal grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="order-last md:order-first relative md:col-span-7">
+<div class="aspect-[4/3] bg-surface-container-highest overflow-hidden">
+<img alt="A master Filipino shoemaker in his 50s with weathered hands working on the sole of a luxury leather shoe in a sun-drenched Marikina workshop." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0MUih1OkQOX5nLRH1EJxxBDkP8Dho7alF9f5p4Hu6cVjwuVh-ahR9CNoEvr0jmvos1_YBce5YICiXkdqTvjrXuPrMMSV_L-GZeigKTtoLcxeQjKWPz3ezMBrcan64tqhgysUkbwO1Qf4lwvQt4N6Bqd4x2F-qll7F1_bgbMW5ecFQyHMda6b6JuE0gIOVNvyhSNo34Hx9k9HyHX-Y0RAUnONrbo7PTYcDiRq0j30VYkMUIthXc1Qv"/>
+</div>
+</div>
+<div class="md:col-span-5 md:col-start-8">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block font-semibold">Stage 02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-4">The Last</h3>
+<p class="font-body-md text-body-md mb-8 text-on-surface leading-relaxed tracking-normal">The soul of the shoe. We carve our bespoke lasts from solid maple, shaped to the exact anatomical measurements of the client's foot. It is here where comfort and aesthetic silhouette are perfectly balanced.</p>
+<div class="p-6 bg-surface-container border-l-2 border-secondary">
+<p class="font-label-md text-label-md italic text-on-tertiary-fixed-variant">"The last is the foundation. If the foundation is flawed, the shoe will never truly belong to the wearer."</p>
+</div>
+</div>
+</div>
+<!-- Step 3: The Welt Stitch -->
+<div class="scroll-reveal grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block font-semibold">Stage 03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-4">The Welt Stitch</h3>
+<p class="font-body-md text-body-md mb-8 text-on-surface leading-relaxed tracking-normal">Using a technique passed down through generations of Marikina artisans, the hand-welted construction connects the upper, insole, and welt with a single, continuous stitch. This ensures unparalleled durability and allows for the shoe to be resoled for decades.</p>
+<a class="artisan-cta relative font-label-md text-label-md text-primary flex items-center gap-2 group w-fit" href="#">
+<span class="material-symbols-outlined text-[18px]">architecture</span>
+                            Explore Construction Methods
+                        </a>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<div class="aspect-[1.34] bg-surface-container-highest overflow-hidden">
+<img alt="Hand-welting process close-up" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs7ajrvUVUiqY74o6nzaqPKNHTveUdryqFfgOauKNIf-qfMaIRQFeyugn5tT1bliDfAt4hxxzDVLNcLN_q2xxnlH-q44PWFqQc6-huGJ1N1AW0Y6jIukOHAMNPJYFNedNjdLt4yY78taOPrUnf1s0VCy-S-w7rMjaFxgxTQy4DcpkhrXEF7kITqjlbrxn6S-F6wAa5Q1KWk7x7aMVGfj7tDU_j4a5ADA-AK_7SZ8K8HxjXER2SQ75mrUpI"/>
+</div>
+</div>
+</div>
+<!-- Step 4: The Patina -->
+<div class="scroll-reveal grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 order-last md:order-first relative">
+<div class="aspect-square bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up of a shoemaker's hand applying a rich navy and umber patina to a finished leather oxford." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SO-JIaFyk8BKlat9Lx0UhGiPGMtB-TRBdedc628vlHkBJrSVKfb0jJyY4edF5IVsqr_RWI75fRhtBn8HBwdb9txIpvAnrFmFC2_JGDm9FmmvV8Gpv0N7NEfOT8Jb4ODjn0HS6ABc0h_qr3TClhFBGSlG_nlkuujW4BJznDPLBtgWh--ch1viOtUvqf6Ao0qSvvwn2MHMQZNwcJ44DIL9DsIV7DFCPAnC-3qVrbfHpv-_kHMs6X_Y"/>
+</div>
+</div>
+<div class="md:col-span-5 md:col-start-8">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block font-semibold">Stage 04</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mb-4">The Patina</h3>
+<p class="font-body-md text-body-md mb-8 text-on-surface leading-relaxed tracking-normal">Each pair of Sapatero shoes is hand-painted, layer by layer. This finishing process creates a depth of color that no machine can replicate—a unique patina that shifts in the light and grows more beautiful with every wear.</p>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-[#3a210d] shadow-inner border border-white/20"></div>
+<div class="w-12 h-12 rounded-full bg-[#162839] shadow-inner border border-white/20"></div>
+<div class="w-12 h-12 rounded-full bg-[#944925] shadow-inner border border-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action -->
+<section class="py-32 bg-primary text-surface text-center px-margin-mobile">
+<div class="max-w-2xl mx-auto">
+<h2 class="font-headline-md text-headline-md mb-8">Begin Your Bespoke Journey</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-12">Experience the heritage of Marikina craftsmanship. Book a consultation at our atelier to have your lasts carved and your story told.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="px-12 py-4 bg-secondary text-white font-label-md text-label-md uppercase tracking-widest hover:bg-secondary/90 transition-all">
+                    Book a Consultation
+                </button>
+<button class="px-12 py-4 border border-surface-dim text-surface font-label-md text-label-md uppercase tracking-widest hover:bg-surface/10 transition-all">
+                    Request a Lookbook
+                </button>
+</div>
+</div>
+</section>
+<!-- Bespoke Gallery Section -->
+<section class="py-margin-desktop bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-12 text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">The Bespoke Gallery</h2>
+<p class="font-body-md text-body-md text-on-surface max-w-2xl mx-auto leading-relaxed">A curated showcase of unique commissions, where individual narratives are carved into the finest leathers. Every pair is a testament to the dialogue between artisan and client.</p>
+</div>
+<div class="relative group cursor-pointer overflow-hidden">
+<div class="aspect-[16/9] md:aspect-[21/9] bg-surface-container-highest">
+<img alt="Bespoke Gallery Showcase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_fjZXW4CPgCG1Moh89wSvrZxfxHU5XhiCI0l4wpdTA53p0EazNDfQLnj7azaiwQMqEnQa51HpjMuxsS7x9Oa5qOgqs0WXKfksUwzoqKusyRBNn5FoTk4b32g9Ix8a2BQdEdPFZHs5tP2KE3ZoRErn3aUqq68sCnaWjFdQbXT0Oiu5TIIfh4-HTjPqXZTy0s0XTR9fCTYHYKbQhUOLe-KA2C81XfnfLHClYltzb6WgC5tXj697qcaM"/>
+</div>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<div class="px-8 py-3 border border-white text-white font-label-md text-label-md uppercase tracking-widest backdrop-blur-sm">
+                        View Details
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<footer class="w-full bg-surface-container-high border-t border-outline-variant/50 opacity-90 transition-opacity hover:opacity-100">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm text-tertiary">SAPATERO</div>
+<p class="font-body-md text-body-md max-w-xs text-on-surface leading-relaxed tracking-normal">Elevating Filipino craftsmanship through the meticulous art of bespoke shoemaking. Marikina's heritage, redefined for the modern gentleman.</p>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Heritage</h4>
+<ul class="space-y-2">
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">About Us</a></li>
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">Bespoke Process</a></li>
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">Care Guide</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Service</h4>
+<ul class="space-y-2">
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md hover:text-secondary underline decoration-1 underline-offset-4 text-on-surface uppercase tracking-widest font-label-md" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6 md:text-right">
+<div class="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">Join the Atelier</div>
+<div class="flex flex-col gap-4 md:items-end">
+<input class="bg-transparent border-b border-outline p-2 w-full max-w-xs font-body-md focus:outline-none focus:border-secondary transition-colors" placeholder="Email Address" type="email"/>
+<button class="font-label-md text-label-md text-secondary uppercase tracking-widest artisan-cta relative">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-gutter border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed tracking-normal">© 2024 Sapatero Marikina. Heritage in Every Stitch.</p>
+</div>
+</footer>
+</main>
+<script>
+    // Simple scroll reveal observer
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('h-16', 'bg-surface/95');
+            nav.classList.remove('h-20');
+        } else {
+            nav.classList.remove('h-16', 'bg-surface/95');
+            nav.classList.add('h-20');
+        }
+    });
+</script>
+</body></html>

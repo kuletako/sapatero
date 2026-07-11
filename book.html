@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Hanken+Grotesk:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2f1ed",
+                    "surface": "#faf9f5",
+                    "on-secondary-container": "#773310",
+                    "inverse-primary": "#b5c8df",
+                    "surface-variant": "#e3e2df",
+                    "on-surface-variant": "#43474c",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#360f00",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#ffdbcd",
+                    "secondary-container": "#fe9e72",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-tertiary-container": "#c99f83",
+                    "surface-tint": "#4e6073",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#eabda0",
+                    "error": "#ba1a1a",
+                    "secondary": "#944925",
+                    "outline-variant": "#c4c6cd",
+                    "tertiary-container": "#533621",
+                    "surface-dim": "#dbdad6",
+                    "surface-bright": "#faf9f5",
+                    "on-secondary-fixed-variant": "#76320f",
+                    "background": "#faf9f5",
+                    "primary": "#162839",
+                    "surface-container-low": "#f4f4f0",
+                    "surface-container-high": "#e9e8e4",
+                    "on-tertiary-fixed": "#2d1604",
+                    "on-surface": "#1b1c1a",
+                    "secondary-fixed-dim": "#ffb596",
+                    "on-tertiary-fixed-variant": "#5f402a",
+                    "on-primary-fixed": "#091d2e",
+                    "primary-container": "#2c3e50",
+                    "on-primary-container": "#96a9be",
+                    "surface-container-highest": "#e3e2df",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2f312e",
+                    "on-error-container": "#93000a",
+                    "outline": "#74777d",
+                    "on-background": "#1b1c1a",
+                    "primary-fixed-dim": "#b5c8df",
+                    "tertiary": "#3a210d",
+                    "surface-container": "#efeeea",
+                    "primary-fixed": "#d1e4fb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#36485b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-sm": ["Libre Caslon Text"],
+                    "headline-md": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .stitch-divider {
+            background-image: linear-gradient(to right, #944925 33%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 12px 1px;
+            background-repeat: repeat-x;
+            height: 1px;
+            width: 100%;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #faf9f5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #944925;
+        }
+        .artisanal-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        .artisanal-btn:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary/20 selection:text-secondary min-h-screen overflow-y-auto">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">SAPATERO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/collections.html">Collections</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/our story.html">Our Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/craftsmanship.html">Craftsmanship</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/bespoke.html">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas (Animated) -->
+<div class="animate-fade-in-up opacity-0">
+<main class="pt-32 pb-24 min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<header class="mb-16 text-center md:text-left max-w-2xl">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-secondary mb-4 block">The Private Atelier</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Schedule a Private Fitting</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Experience the meticulous art of bespoke shoemaking. Choose a time for a personal consultation at our Marikina atelier or a virtual session from anywhere in the world.</p>
+</header>
+<!-- Asymmetric Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Form Section -->
+<div class="lg:col-span-7">
+<form class="space-y-12" id="appointmentForm">
+<!-- Step 1: Identity -->
+<section class="space-y-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Your Details</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="relative">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-secondary focus:ring-0 px-0 py-3 font-body-md transition-colors placeholder-transparent" id="name" name="name" placeholder=" " type="text"/>
+<label class="absolute left-0 -top-1 text-label-sm text-on-surface-variant transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-1 peer-focus:text-label-sm peer-focus:text-secondary uppercase tracking-widest" for="name">Full Name</label>
+</div>
+<div class="relative">
+<input class="peer w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-secondary focus:ring-0 px-0 py-3 font-body-md transition-colors placeholder-transparent" id="email" name="email" placeholder=" " type="email"/>
+<label class="absolute left-0 -top-1 text-label-sm text-on-surface-variant transition-all peer-placeholder-shown:text-body-md peer-placeholder-shown:top-3 peer-focus:-top-1 peer-focus:text-label-sm peer-focus:text-secondary uppercase tracking-widest" for="email">Email Address</label>
+</div>
+</div>
+</section>
+<!-- Step 2: Consultation Type -->
+<section class="space-y-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Consultation Preference</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="group relative cursor-pointer block">
+<input checked="" class="peer hidden" name="consultation_type" type="radio" value="in-person"/>
+<div class="p-6 border border-outline-variant/30 peer-checked:border-secondary peer-checked:bg-secondary-container/10 transition-all duration-300 group-hover:bg-surface-container-low h-full flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="storefront">storefront</span>
+<span class="font-headline-sm text-headline-sm text-primary mb-2">Atelier Fitting</span>
+<p class="font-body-md text-on-surface-variant">A tactile experience in our Marikina workshop. Includes physical measurement and leather sampling.</p>
+</div>
+</label>
+<label class="group relative cursor-pointer block">
+<input class="peer hidden" name="consultation_type" type="radio" value="virtual"/>
+<div class="p-6 border border-outline-variant/30 peer-checked:border-secondary peer-checked:bg-secondary-container/10 transition-all duration-300 group-hover:bg-surface-container-low h-full flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-4" data-icon="video_chat">video_chat</span>
+<span class="font-headline-sm text-headline-sm text-primary mb-2">Virtual Atelier</span>
+<p class="font-body-md text-on-surface-variant">Digital consultation via secure video link. Guided self-measurement and style discussion.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Step 3: Date & Time -->
+<section class="space-y-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Schedule</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-secondary focus:ring-0 px-0 py-3 font-body-md text-primary appearance-none" id="date" name="date" type="date"/>
+<label class="absolute left-0 -top-1 text-label-sm text-secondary uppercase tracking-widest" for="date">Preferred Date</label>
+</div>
+<div class="relative">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant/50 focus:border-secondary focus:ring-0 px-0 py-3 font-body-md text-primary appearance-none" id="time" name="time">
+<option disabled="" selected="" value="">Select a time</option>
+<option value="09:00">09:00 AM</option>
+<option value="11:00">11:00 AM</option>
+<option value="14:00">02:00 PM</option>
+<option value="16:00">04:00 PM</option>
+</select>
+<label class="absolute left-0 -top-1 text-label-sm text-secondary uppercase tracking-widest" for="time">Available Slots</label>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<div class="pt-8 border-t border-outline-variant/30">
+<button class="artisanal-btn relative inline-flex items-center gap-4 px-12 py-5 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-[0.2em] transition-all hover:bg-primary/90" type="submit">
+                                    Request Appointment
+                                    <span class="material-symbols-outlined" data-icon="stylus_note">stylus_note</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right: Content & Visual Section -->
+<div class="lg:col-span-5 space-y-12">
+<!-- Image Showcase -->
+<div class="relative aspect-[4/5] w-full overflow-hidden">
+<img alt="A high-end, editorial photograph of a master shoemaker's workshop at Sapatero. In the foreground, a pair of dark mahogany leather oxfords sits on a weathered wooden workbench, illuminated by warm, directional light highlighting the fine stitching. Behind them, antique cobbler tools, lasts, and rolls of premium leather are visible in a soft-focus background, conveying a sense of heritage and quiet luxury. The color palette is rich with deep browns, creams, and navy accents, matching the heritage modern aesthetic." class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEHEYh8ulgXcADHbn_rSLJK90Fq69DP4FwgwBzBAbZA37oJ56dHZABbOQuk066U0QVXtc8k33DCMYQj-A-5NAaNqfZpi7cz1XoUEyT-_CCEOeeJx4A4rjEX0AFZ9R53280aCgKI8of6s9652Nc8pEMVzcEwyPgJXzAjtoz133xFv92jLiZiUSTDvKx9q_YR1t-QsZ9hBf5voUuMPbhhkCz0ZPKjFjwI1YF1maWT3TsiNhdG7UKiR35"/>
+</div>
+<!-- Info Cards -->
+<div class="bg-surface-container-low p-8 space-y-6">
+<h4 class="font-headline-sm text-headline-sm text-primary">What to Expect</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface-variant">A 45-minute deep dive into your footwear needs and lifestyle.</p>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface-variant">Professional measurement to ensure a lifetime of comfort.</p>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-on-surface-variant">Access to our exclusive seasonal leather vault.</p>
+</li>
+</ul>
+<div class="stitch-divider opacity-50 my-6"></div>
+<div class="space-y-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block">Location</span>
+<p class="font-body-md text-on-surface-variant">Sapatero Atelier<br/>Marikina City, Philippines<br/>By Appointment Only</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Decorative Stitching Section -->
+<div class="py-12 flex justify-center">
+<div class="w-full max-w-container-max flex items-center gap-8 px-margin-desktop">
+<div class="stitch-divider flex-1"></div>
+<span class="material-symbols-outlined text-secondary" data-icon="architecture">architecture</span>
+<div class="stitch-divider flex-1"></div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand -->
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm text-primary">Sapatero</div>
+<p class="text-on-surface-variant/70 font-body-md">© 2024 Sapatero. Handcrafted in Marikina.</p>
+</div>
+<!-- Links 1 -->
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Our Story</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Craftsmanship</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Bespoke</a>
+</div>
+<!-- Links 2 -->
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Contact Us</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Terms of Service</a>
+</div>
+<!-- Social/Newsletter -->
+<div class="space-y-4">
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary">Newsletter</span>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline focus:border-secondary focus:ring-0 px-0 py-2 font-body-md transition-colors placeholder:text-outline-variant" placeholder="Email address" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        // Micro-interactions for form inputs
+        const form = document.getElementById('appointmentForm');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            // Animation for submission
+            btn.style.opacity = '0.7';
+            btn.innerHTML = 'Sending Request...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check">check</span> Request Received';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary');
+                
+                // Reset form optionally
+                form.reset();
+            }, 1500);
+        });
+
+        // Hover effect for navigation items to ensure consistency with design system
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.classList.add('opacity-70');
+            });
+            link.addEventListener('mouseleave', () => {
+                link.classList.remove('opacity-70');
+            });
+        });
+    </script>
+</body></html>

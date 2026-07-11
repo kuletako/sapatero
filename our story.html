@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth overflow-y-auto" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        try {
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "surface-dim": "#dbdad6",
+                            "on-background": "#1b1c1a",
+                            "surface-container-lowest": "#ffffff",
+                            "secondary-container": "#fe9e72",
+                            "on-surface": "#1b1c1a",
+                            "primary-fixed-dim": "#b5c8df",
+                            "surface": "#faf9f5",
+                            "tertiary-fixed": "#ffdcc6",
+                            "inverse-primary": "#b5c8df",
+                            "secondary": "#944925",
+                            "primary-fixed": "#d1e4fb",
+                            "on-secondary-fixed-variant": "#76320f",
+                            "on-tertiary": "#ffffff",
+                            "surface-bright": "#faf9f5",
+                            "tertiary-container": "#533621",
+                            "on-primary-fixed": "#091d2e",
+                            "outline-variant": "#c4c6cd",
+                            "surface-container-low": "#f4f4f0",
+                            "on-surface-variant": "#43474c",
+                            "on-primary-fixed-variant": "#36485b",
+                            "on-primary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "surface-tint": "#4e6073",
+                            "on-error": "#ffffff",
+                            "on-secondary-fixed": "#360f00",
+                            "secondary-fixed-dim": "#ffb596",
+                            "error-container": "#ffdad6",
+                            "on-tertiary-container": "#c99f83",
+                            "outline": "#74777d",
+                            "primary-container": "#2c3e50",
+                            "background": "#faf9f5",
+                            "tertiary-fixed-dim": "#eabda0",
+                            "primary": "#162839",
+                            "secondary-fixed": "#ffdbcd",
+                            "on-secondary-container": "#773310",
+                            "tertiary": "#3a210d",
+                            "surface-container-highest": "#e3e2df",
+                            "surface-container": "#efeeea",
+                            "on-secondary": "#ffffff",
+                            "error": "#ba1a1a",
+                            "surface-variant": "#e3e2df",
+                            "on-tertiary-fixed": "#2d1604",
+                            "on-tertiary-fixed-variant": "#5f402a",
+                            "on-primary-container": "#96a9be",
+                            "surface-container-high": "#e9e8e4",
+                            "inverse-on-surface": "#f2f1ed",
+                            "inverse-surface": "#2f312e"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                        },
+                        "spacing": {
+                            "margin-desktop": "64px",
+                            "margin-mobile": "20px",
+                            "gutter": "24px",
+                            "container-max": "1280px",
+                            "unit": "8px"
+                        },
+                        "fontFamily": {
+                            "label-sm": ["Hanken Grotesk"],
+                            "headline-md": ["Libre Caslon Text"],
+                            "label-md": ["Hanken Grotesk"],
+                            "headline-sm": ["Libre Caslon Text"],
+                            "body-md": ["Hanken Grotesk"],
+                            "display-lg-mobile": ["Libre Caslon Text"],
+                            "display-lg": ["Libre Caslon Text"],
+                            "body-lg": ["Hanken Grotesk"]
+                        },
+                        "fontSize": {
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                            "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "display-lg-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                        }
+                    },
+                },
+            }
+        } catch (_e) {}
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-container/30 overflow-y-auto opacity-100 min-h-screen">
+<!-- Top Navigation Shell - Fixed and not animated -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-margin-desktop h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">SAPATERO</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/collections.html">Collections</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-secondary transition-colors duration-300" href="/sapatero/our story.html">Our Story</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/craftsmanship.html">Craftsmanship</a>
+<a class="font-body-md text-body-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors duration-300" href="/sapatero/bespoke.html">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</nav>
+<!-- Animated Content Container -->
+<div class="animate-fade-in-up">
+<main>
+<!-- Hero Section -->
+<!-- Section 1: The Marikina Legacy -->
+<section class="py-margin-desktop px-margin-desktop max-w-container-max mx-auto py-32">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-unit transition-all duration-1000 ease-out opacity-100 translate-y-0" data-aos="fade-up">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-4 border-secondary pl-6">
+                        The Marikina Legacy
+                    </h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg leading-relaxed">
+<p class="">
+                            For over a century, the rhythm of hammers against leather has been the heartbeat of Marikina. This is not just an industry; it is a shared ancestry. At Sapatero, we carry the weight of this heritage in every stitch, preserving the secrets passed down through generations of master shoemakers.
+                        </p>
+<p class="">
+                            Our purpose goes beyond commerce. We are custodians of a fading art form. By marrying traditional Filipino resilience with global standards of luxury, we ensure that the legendary craftsmanship of our home continues to walk the world's most prestigious avenues.
+                        </p>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md uppercase artisanal-cta relative mt-8" href="#">
+                            Explore the Archive <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-sm shadow-xl shadow-primary/5">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLs7ajrvUVUiqY74o6nzaqPKNHTveUdryqFfgOauKNIf-qfMaIRQFeyugn5tT1bliDfAt4hxxzDVLNcLN_q2xxnlH-q44PWFqQc6-huGJ1N1AW0Y6jIukOHAMNPJYFNedNjdLt4yY78taOPrUnf1s0VCy-S-w7rMjaFxgxTQy4DcpkhrXEF7kITqjlbrxn6S-F6wAa5Q1KWk7x7aMVGfj7tDU_j4a5ADA-AK_7SZ8K8HxjXER2SQ75mrUpI"/>
+<div class="absolute inset-0 border-[20px] border-surface/50 pointer-events-none transition-all duration-500 group-hover:border-surface/20"></div>
+</div>
+</div>
+</section>
+<!-- Stitched Divider -->
+<div class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="stitched-divider"></div>
+</div>
+<!-- Section 2: A Fusion of Worlds -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-md text-headline-md text-primary mb-12">A Fusion of Worlds</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="space-y-4 p-8 bg-surface border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">architecture</span>
+<h3 class="font-headline-sm text-headline-sm text-tertiary">Anatomical Design</h3>
+<p class="text-on-surface-variant font-body-md">Precision-engineered lasts that respect the natural contour of the foot, ensuring comfort that evolves over time.</p>
+</div>
+<div class="space-y-4 p-8 bg-surface border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">eco</span>
+<h3 class="font-headline-sm text-headline-sm text-tertiary">Noble Materials</h3>
+<p class="text-on-surface-variant font-body-md">Sourcing the finest full-grain leathers from Italian tanneries, selected for their character and aging potential.</p>
+</div>
+<div class="space-y-4 p-8 bg-surface border border-outline-variant/20">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">brush</span>
+<h3 class="font-headline-sm text-headline-sm text-tertiary">Hand-Burnished</h3>
+<p class="text-on-surface-variant font-body-md">Each pair undergoes an intricate finishing process, creating deep, multi-tonal patinas unique to every shoe.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: The Master's Touch -->
+<section class="bg-primary py-32 relative">
+<div class="max-w-4xl mx-auto px-margin-mobile text-center text-surface-container-lowest">
+<h2 class="font-headline-md text-headline-md mb-8 tracking-wide">The Master's Touch</h2>
+<div class="mb-12">
+<span class="material-symbols-outlined text-secondary text-6xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<blockquote class="font-display-lg italic mb-12 leading-snug">
+                    "A shoe is only as good as the soul poured into its creation. We don't just build footwear; we build legacies."
+                </blockquote>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-[1px] bg-secondary mb-4"></div>
+<p class="font-label-md uppercase tracking-widest text-on-primary-container">Mang Efren</p>
+<p class="font-body-md text-on-primary-container/70">Master Cordwainer since 1978</p>
+</div>
+</div>
+<!-- Subtle Texture Overlays -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary to-transparent"></div>
+</section>
+<!-- Artisanal CTA -->
+<section class="py-24 text-center">
+<div class="max-w-xl mx-auto px-margin-mobile space-y-8">
+<h3 class="font-headline-sm text-headline-sm text-primary">Your Journey Begins with a Single Last</h3>
+<p class="text-on-surface-variant">Consult with our master craftsmen for a bespoke experience that mirrors your unique narrative.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+<button class="bg-primary text-surface px-10 py-4 font-label-md uppercase tracking-widest hover:bg-secondary transition-all duration-300">
+                        Book a Consultation
+                    </button>
+<button class="border border-secondary text-secondary px-10 py-4 font-label-md uppercase tracking-widest hover:bg-secondary/5 transition-all duration-300">
+                        View Collections
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full mt-margin-desktop bg-surface-container-high dark:bg-surface-container-highest border-t border-outline-variant/50">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="space-y-6">
+<a class="font-headline-sm text-headline-sm text-tertiary uppercase tracking-tight" href="#" style="opacity: 1;">SAPATERO</a>
+<p class="font-body-md text-on-surface-variant max-w-xs">
+                    Redefining Filipino luxury through the preservation of Marikina's artisanal shoemaking heritage.
+                </p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-secondary" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
+<!-- Links Column -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-4">
+<h4 class="font-label-md uppercase text-primary tracking-widest">The House</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">About Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">Bespoke Process</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">Care Guide</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md uppercase text-primary tracking-widest">Service</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary underline decoration-1 underline-offset-4 transition-opacity uppercase tracking-widest" href="#">Contact</a>
+</nav>
+</div>
+</div>
+<!-- Newsletter Column -->
+<div class="space-y-6">
+<h4 class="font-label-md uppercase text-primary tracking-widest">Join the Journal</h4>
+<p class="font-body-md text-on-surface-variant">Stay updated on new collections and editorial stories.</p>
+<form class="flex gap-2">
+<input class="bg-transparent border-b border-outline p-2 w-full focus:outline-none focus:border-secondary font-body-md text-primary" placeholder="Email Address" type="email"/>
+<button class="text-primary hover:text-secondary p-2 transition-colors" type="submit">
+<span class="material-symbols-outlined">east</span>
+</button>
+</form>
+</div>
+</div>
+<div class="px-margin-desktop py-unit border-t border-outline-variant/30 text-center">
+<p class="font-label-sm text-on-surface-variant opacity-80">
+                © 2024 Sapatero Marikina. Heritage in Every Stitch.
+            </p>
+</div>
+</footer>
+</div>
+<script>
+    // Simple parallax effect for hero
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroBg = document.querySelector('.bg-cover');
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrolled * 0.15}px)`;
+        }
+    });
+
+    // Intersection Observer for fade-in animations (existing AOS-like behavior)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('[data-aos="fade-up"]').forEach(el => {
+        el.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+    });
+</script>
+</body></html>
